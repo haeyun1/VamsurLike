@@ -2,16 +2,7 @@
 name: Feat
 about: Request a new feature
 title: ''
-labels: ''
-assignees: ''
-
----
-
----
-name: FEAT
-about: Request a new feature
-title: "[FEAT] 이슈 제목"
-labels: '✨ feat'
+labels: Feat
 assignees: ''
 
 ---
