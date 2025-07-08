@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4084354734979219260}
   - component: {fileID: 307688832636169515}
   - component: {fileID: 4510259232169023249}
-  - component: {fileID: 4557321524382950014}
   - component: {fileID: 6864895082543264146}
   m_Layer: 0
   m_Name: Enemy B
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7302091285641678663}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.04, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -187,20 +186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  target: {fileID: 0}
---- !u!114 &4557321524382950014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7302091285641678663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f000b06fae14da4b71fc446c58bff7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
   target: {fileID: 0}
 --- !u!114 &6864895082543264146
 MonoBehaviour:
