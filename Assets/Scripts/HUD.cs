@@ -19,6 +19,7 @@ public class HUD : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!GameManager.instance.isLive) return;
         switch (type)
         {
             case InfoType.Exp:
