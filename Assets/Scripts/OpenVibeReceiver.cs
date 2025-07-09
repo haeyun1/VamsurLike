@@ -42,6 +42,7 @@ public class OpenVibeReceiver : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(inlet);
         if(inlet != null)
         {
             int samples_returned = inlet.pull_chunk(data_buffer, timestamp_buffer);
