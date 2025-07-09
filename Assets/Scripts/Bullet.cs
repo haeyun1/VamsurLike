@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour
     public float damage;
     public int per;
     Rigidbody2D rigid;
-    public GameObject Receiver;
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -26,22 +25,17 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!Receiver.gameObject.GetComponent<OpenVibeReceiver>().OpenVibeConnected()) return;
-
-        if (Receiver.gameObject.GetComponent<OpenVibeReceiver>().GetIsSatisfied())
+        if (!collision.CompareTag("Enemy") || per == -1)
         {
-            if (!collision.CompareTag("Enemy") || per == -1)
-            {
-                return;
-            }
+            return;
+        }
 
-            per--;
+        per--;
 
-            if (per == -1)
-            {
-                rigid.velocity = Vector2.zero;
-                gameObject.SetActive(false);
-            }
+        if (per == -1)
+        {
+            rigid.velocity = Vector2.zero;
+            gameObject.SetActive(false);
         }
     }
 }
