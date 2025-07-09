@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [Header("# Game Control")]
+    public bool isLive;
     public float gameTime;
     public float maxGameTime = 6 * 10f; // 20��
     [Header("# Player Info")]
@@ -23,13 +24,15 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
     }
-    void Start()
+    public void GameStart()
     {
         health = maxHealth;
+        isLive = true;
     }
 
     void Update()
     {
+        if (!isLive) return;
         gameTime += Time.deltaTime;
 
         if (gameTime > maxGameTime)
