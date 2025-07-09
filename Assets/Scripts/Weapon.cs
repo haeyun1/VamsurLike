@@ -102,28 +102,13 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        if (Receiver.gameObject.GetComponent<OpenVibeReceiver>().OpenVibeConnected())
-        {
-            if (Receiver.gameObject.GetComponent<OpenVibeReceiver>().GetIsSatisfied())
-            {
-                Vector3 targetPos = player.scanner.nearestTarget.position;
-                Vector3 dir = targetPos - transform.position;
-                dir = dir.normalized;
-                Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
-                bullet.position = transform.position;
-                bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-                bullet.GetComponent<Bullet>().Init(damage, count, dir);
-            }
-        }
-        else
-        {
-            Vector3 targetPos = player.scanner.nearestTarget.position;
-            Vector3 dir = targetPos - transform.position;
-            dir = dir.normalized;
-            Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
-            bullet.position = transform.position;
-            bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-            bullet.GetComponent<Bullet>().Init(damage, count, dir);
-        }
+        Vector3 targetPos = player.scanner.nearestTarget.position;
+        Vector3 dir = targetPos - transform.position;
+        dir = dir.normalized;
+        Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
+        bullet.position = transform.position;
+        bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        bullet.GetComponent<Bullet>().Init(damage, count, dir);
     }
+
 }
