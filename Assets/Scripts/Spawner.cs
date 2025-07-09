@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
+        if (!GameManager.instance.isLive) return;
         timer += Time.deltaTime;
         level = Mathf.Min(Mathf.FloorToInt(GameManager.instance.gameTime / 10f), spawnData.Length - 1);
         if(timer > spawnData[level].spawnTime)
@@ -32,7 +33,7 @@ public class Spawner : MonoBehaviour
     }
 }
 
-[System.Serializable] // Á÷·ÄÈ­ -> À¯´ÏÆ¼¿¡¼­ ¶ä
+[System.Serializable] // ï¿½ï¿½ï¿½ï¿½È­ -> ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 public class SpawnData
 {
     public float spawnTime;
