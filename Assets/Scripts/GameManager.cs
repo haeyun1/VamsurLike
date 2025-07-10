@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float gameTime;
     public float maxGameTime = 6 * 10f; // 20��
     [Header("# Player Info")]
+    public int playerId;
     public float health;
     public float maxHealth = 100;
     public int level;
