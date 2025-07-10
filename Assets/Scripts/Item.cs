@@ -12,6 +12,8 @@ public class Item : MonoBehaviour
 
     Image icon;
     Text textLevel;
+    Text textName;
+    Text textDesc;
 
     void Awake()
     {
@@ -20,11 +22,30 @@ public class Item : MonoBehaviour
 
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
+        textName = texts[1];
+        textDesc = texts[2];
+        textName.text = data.itemName;
     }
 
-    void LateUpdate()
+    void OnEnable()
     {
         textLevel.text = "Lv." + (level + 1);
+        switch (data.itemType)
+        {
+            case ItemData.ItemType.Melee:
+            case ItemData.ItemType.Range:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
+                break;
+            case ItemData.ItemType.Glove:
+            case ItemData.ItemType.Shoe:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100);
+                break;
+            default:
+                textDesc.text = string.Format(data.itemDesc);
+                break;
+
+        }
+
     }
 
     public void Onclick()
@@ -33,7 +54,7 @@ public class Item : MonoBehaviour
         {
             case ItemData.ItemType.Melee:
             case ItemData.ItemType.Range:
-                if(level == 0)
+                if (level == 0)
                 {
                     GameObject newWeapon = new GameObject();
                     weapon = newWeapon.AddComponent<Weapon>();
@@ -52,12 +73,13 @@ public class Item : MonoBehaviour
                 break;
             case ItemData.ItemType.Glove:
             case ItemData.ItemType.Shoe:
-                if(level == 0)
+                if (level == 0)
                 {
                     GameObject newGear = new GameObject();
                     gear = newGear.AddComponent<Gear>();
                     gear.Init(data);
-                } else
+                }
+                else
                 {
                     float nextRate = data.damages[level];
                     gear.LevelUp(nextRate);
@@ -69,9 +91,10 @@ public class Item : MonoBehaviour
                 break;
         }
 
-        
 
-        if(level == data.damages.Length) {
+
+        if (level == data.damages.Length)
+        {
             GetComponent<Button>().interactable = false;
         }
     }

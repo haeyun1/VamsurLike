@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [Header("# Game Object")]
     public Player player;
     public PoolManager pool;
+    public LevelUp uiLevelUp;
     public Result uiResult;
     public GameObject enemyCleaner;
 
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         health = maxHealth;
+        uiLevelUp.Select(0);
         Resume();
     }
     public void GameOver()
@@ -83,10 +85,11 @@ public class GameManager : MonoBehaviour
         if (!isLive) return;
         exp++;
 
-        if (exp == nextExp[level])
+        if (exp == nextExp[Mathf.Min(level, nextExp.Length - 1)])
         {
             level++;
             exp = 0;
+            uiLevelUp.Show();
         }
     }
 
