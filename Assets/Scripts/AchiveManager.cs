@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,12 +9,15 @@ public class AchiveManager : MonoBehaviour
 {
     public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
+    public GameObject uiNotice;
 
     enum Achive { UnlockPotato, UnlockBean }
     Achive[] achives;
+    WaitForSecondsRealtime wait;
     void Awake()
     {
         achives = (Achive[])Enum.GetValues(typeof(Achive));
+        wait = new WaitForSecondsRealtime(5);
         if (!PlayerPrefs.HasKey("MyData")) { Init(); }
     }
 
@@ -67,6 +71,19 @@ public class AchiveManager : MonoBehaviour
         if (isAchive && PlayerPrefs.GetInt(achive.ToString()) == 0)
         {
             PlayerPrefs.SetInt(achive.ToString(), 1);
+            for (int i = 0; i < uiNotice.transform.childCount; i++)
+            {
+                bool isActive = i == (int)achive;
+                uiNotice.transform.GetChild(i).gameObject.SetActive(isActive);
+            }
+            StartCoroutine(NoticeRoutine());
         }
+    }
+
+    IEnumerator NoticeRoutine()
+    {
+        uiNotice.SetActive(true);
+        yield return wait;
+        uiNotice.SetActive(false);
     }
 }
