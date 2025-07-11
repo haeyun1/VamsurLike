@@ -332,7 +332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD130 1"
+  m_Text: "\uCE90\uB9AD\uD130 2"
 --- !u!222 &46422989
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157839005}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -17541,7 +17541,7 @@ RectTransform:
   m_Father: {fileID: 232182094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.52, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18908,7 +18908,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB3D9\uC18D\uB3C4 10% \uC99D\uAC00"
+  m_Text: "\uAD00\uD1B5\uB825 1 \uCD94\uAC00"
 --- !u!222 &639697012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19086,7 +19086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &768390914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19132,7 +19132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &847618113
 Rigidbody2D:
   serializedVersion: 4
@@ -19283,6 +19283,11 @@ MonoBehaviour:
   speed: 3
   scanner: {fileID: 0}
   hands: []
+  animCon:
+  - {fileID: 9100000, guid: 30a56d0a60de840e38b0f21e6e7e934a, type: 2}
+  - {fileID: 22100000, guid: 4dd219923d5054671a0d881438f83b7a, type: 2}
+  - {fileID: 22100000, guid: 95d4d19ca893b4a619ebf5b911e0fa8a, type: 2}
+  - {fileID: 22100000, guid: ba6a49171f0ff42d7ac171d107653423, type: 2}
 --- !u!95 &847618118
 Animator:
   serializedVersion: 5
@@ -19575,7 +19580,7 @@ GameObject:
   - component: {fileID: 896458207}
   - component: {fileID: 896458206}
   m_Layer: 5
-  m_Name: Character 1
+  m_Name: Character 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19689,7 +19694,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1366196245}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameStart
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20156,7 +20161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD130 2"
+  m_Text: "\uCE90\uB9AD\uD130 1"
 --- !u!222 &1007282196
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -53929,11 +53934,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1366196245}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameStart
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -70935,7 +70940,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB3D9\uC18D\uB3C4 10% \uC99D\uAC00"
+  m_Text: "\uC5F0\uC0AC\uC18D\uB3C4 10% \uC99D\uAC00"
 --- !u!222 &1573607980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -70958,7 +70963,7 @@ GameObject:
   - component: {fileID: 1612619683}
   - component: {fileID: 1612619682}
   m_Layer: 5
-  m_Name: Character 0
+  m_Name: Character 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71072,11 +71077,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1366196245}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameStart
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -71423,8 +71428,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1612619681}
   - {fileID: 896458205}
+  - {fileID: 1612619681}
   - {fileID: 2038745731}
   - {fileID: 1386426584}
   m_Father: {fileID: 157839006}
@@ -71758,7 +71763,7 @@ RectTransform:
   m_Father: {fileID: 1781596186}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.52, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -72898,11 +72903,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1366196245}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameStart
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -73126,7 +73131,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB3D9\uC18D\uB3C4 10% \uC99D\uAC00"
+  m_Text: "\uB370\uBBF8\uC9C0 20% \uC99D\uAC00"
 --- !u!222 &2091882615
 CanvasRenderer:
   m_ObjectHideFlags: 0

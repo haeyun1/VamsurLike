@@ -29,10 +29,12 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
     }
-    public void GameStart()
+    public void GameStart(int id)
     {
+        playerId = id;
         health = maxHealth;
-        uiLevelUp.Select(0);
+        player.gameObject.SetActive(true);
+        uiLevelUp.Select(playerId % 2);
         Resume();
     }
     public void GameOver()
