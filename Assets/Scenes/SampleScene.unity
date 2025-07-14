@@ -20177,6 +20177,7 @@ GameObject:
   - component: {fileID: 923087188}
   - component: {fileID: 923087187}
   - component: {fileID: 923087186}
+  - component: {fileID: 923087189}
   m_Layer: 0
   m_Name: EnemyCleaner
   m_TagString: Bullet
@@ -20241,15 +20242,16 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2000, y: 1500}
+  m_Size: {x: 500, y: 500}
   m_EdgeRadius: 0
---- !u!224 &923087188
-RectTransform:
+--- !u!4 &923087188
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923087185}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -20257,11 +20259,33 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!50 &923087189
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923087185}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &930512342
 GameObject:
   m_ObjectHideFlags: 0
@@ -54262,14 +54286,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLive: 0
   gameTime: 0
-  maxGameTime: 60
+  maxGameTime: 300
   playerId: 0
   health: 0
   maxHealth: 100
   level: 0
   kill: 0
   exp: 0
-  nextExp: 01000000050000000a0000000f00000014000000190000001e00000023000000280000002d000000
+  nextExp: 03000000050000000a0000006400000096000000d20000001801000068010000c201000058020000
   player: {fileID: 847618117}
   pool: {fileID: 1298731430}
   uiLevelUp: {fileID: 1701576658}
@@ -72027,20 +72051,21 @@ MonoBehaviour:
     speed: 1.5
   - spawnTime: 0.5
     spriteType: 1
-    health: 20
+    health: 35
     speed: 2
   - spawnTime: 0.4
     spriteType: 2
-    health: 30
+    health: 35
     speed: 2
   - spawnTime: 0.3
     spriteType: 3
-    health: 40
+    health: 50
     speed: 2.5
   - spawnTime: 0.3
     spriteType: 4
-    health: 50
-    speed: 1
+    health: 100
+    speed: 2
+  levelTime: 0
 --- !u!1 &1685831805
 GameObject:
   m_ObjectHideFlags: 0
@@ -74244,7 +74269,7 @@ SceneRoots:
   - {fileID: 545085482}
   - {fileID: 1298731431}
   - {fileID: 1104024300}
-  - {fileID: 923087188}
   - {fileID: 1977939682}
   - {fileID: 921461956}
   - {fileID: 930512343}
+  - {fileID: 923087188}
